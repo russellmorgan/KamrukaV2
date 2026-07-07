@@ -88,9 +88,53 @@
       </nav>
     </header>
 
-    <!-- Hero — Phase 2 (GSAP) -->
+    <!-- Hero — GSAP animation (timings replicated from the Revolution Slider reference) -->
     <section id="hero">
-      <img src="/reference/tmp_hero.png" alt="NOW APPROVED — Available soon! KAMRUKA (camrelizumab-cmrz) + TULVEGIO (rivoceranib)" class="w-full" />
+      <!-- Animated canvas, tablet/desktop. Layers positioned in % of a 1920x621 design canvas -->
+      <div id="hero-canvas" class="relative hidden aspect-[1920/621] w-full overflow-hidden bg-[#fcfcfc] md:block">
+        <img id="hero-gradbar" src="/export/grad_colorbar_1920x30_1.svg" alt="" class="absolute left-0 top-0 z-[7] w-full" />
+        <img
+          id="hero-gif"
+          src="/export/logo-animated.gif"
+          alt="KAMRUKA (camrelizumab-cmrz) + TULVEGIO (rivoceranib)"
+          class="absolute left-[20.96%] top-[26.73%] z-[6] w-[58.07%]"
+        />
+        <img id="hero-tri" src="/export/outer_green_triangle.svg" alt="" class="absolute left-0 top-[10.6%] z-[12] w-[13.33%]" />
+        <img id="hero-diamond" src="/export/green_ribbon_diamond_95x268_1.png" alt="" class="absolute left-0 top-[31.9%] z-[12] w-[4.95%]" />
+        <img id="hero-slope" src="/export/grey_slope_background_1090x621_1.svg" alt="" class="absolute left-0 top-0 z-[10] h-full w-[56.77%]" />
+        <h1
+          id="hero-title"
+          class="absolute left-[10.42%] top-[33.5%] z-[15] w-[26%] text-[4.7vw] font-bold leading-none tracking-[-0.16vw] text-navy"
+        >
+          NOW APPROVED
+        </h1>
+        <img id="hero-btn" src="/export/button_style1_266x42_1.svg" alt="" class="absolute bottom-[27.7%] left-[10.42%] z-[13] w-[13.85%]" />
+        <p
+          id="hero-avail"
+          class="absolute bottom-[29%] left-[11.3%] z-[14] text-[1.35vw] font-bold uppercase leading-none text-white"
+        >
+          Available soon!
+        </p>
+      </div>
+
+      <!-- Static hero, mobile -->
+      <div class="md:hidden">
+        <img src="/export/rainbow_grad_bar_540x30.png" alt="" class="w-full" />
+        <div class="relative overflow-hidden py-10">
+          <img src="/export/grey_slope_background_mobile_306x187.svg" alt="" class="absolute left-0 top-0 h-full w-auto max-w-none" />
+          <div class="relative text-center">
+            <h1 class="text-4xl font-bold leading-tight text-navy">NOW APPROVED</h1>
+            <p class="relative mx-auto mt-3 w-56 bg-navy py-2 text-sm font-bold uppercase text-white [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
+              Available soon!
+            </p>
+            <img
+              src="/export/top_header.png"
+              alt="KAMRUKA (camrelizumab-cmrz) + TULVEGIO (rivoceranib) 250 mg tablets"
+              class="mx-auto mt-8 w-4/5"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============ STAY UP TO DATE ============ -->
@@ -202,7 +246,5 @@
       </div>
     </footer>
 
-    <script>
-      // GSAP animations — Phase 2
-    </script>  </body>
+  </body>
 </html>
