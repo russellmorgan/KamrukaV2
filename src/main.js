@@ -18,8 +18,8 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     .from('#hero-title', { xPercent: -145, autoAlpha: 0, duration: 1.5 }, 4.69)
     .from('#hero-tri', { xPercent: -105, autoAlpha: 0, duration: 1.2 }, 4.98)
     .from('#hero-diamond', { xPercent: -160, autoAlpha: 0, duration: 1.2 }, 4.99)
-    .from('#hero-avail', { x: -100, autoAlpha: 0, duration: 1.2 }, 4.99)
     .from('#hero-btn', { x: -250, autoAlpha: 0, duration: 1.2 }, 5)
+    .from('#hero-avail', { autoAlpha: 0, duration: 0.2 }) // fades in once everything else has landed
 
   // ponytail: test hook — #seek=N freezes the hero timeline at N seconds (headless screenshots)
   const seek = location.hash.match(/seek=([\d.]+)/)
