@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --color-navy: #163a64;
+  --color-headline: #1c4977;
+  --color-ribbon-from: #fdd59e;
+  --color-ribbon-to: #faa632;
+  --color-ink: #313133;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.consent-check:checked {
+  border-color: #2265e4;
+  background: #2265e4
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1.5' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / 70% no-repeat;
+}
+
+/* Shapes Tailwind utilities can't express — clip-path angles */
+/* V depth: 165px total */
+.ribbon-body {
+  clip-path: shape(
+    from 0% 0%,
+    hline to 100%,
+    vline to calc(100% - 179px),
+    curve to calc(100% - 14px) calc(100% - 153px) with 100% calc(100% - 165px),
+    line to calc(50% + 14px) calc(100% - 12px),
+    curve to calc(50% - 14px) calc(100% - 12px) with 50% 100%,
+    line to 14px calc(100% - 153px),
+    curve to 0% calc(100% - 179px) with 0% calc(100% - 165px),
+    close
+  );
+}
+.ribbon-tail {
+  height: 183px;
+  margin-top: -151px;
+  clip-path: shape(
+    from 0% 0%,
+    line to calc(50% - 14px) 153px,
+    curve to calc(50% + 14px) 153px with 50% 165px,
+    line to 100% 0%,
+    vline to 11px,
+    curve to calc(100% - 8px) 25px with 100% 18px,
+    line to calc(50% + 14px) 171px,
+    curve to calc(50% - 14px) 171px with 50% 183px,
+    line to 8px 25px,
+    curve to 0% 11px with 0% 18px,
+    close
+  );
+}
+.submit-btn {
+  transform: skewX(-30deg);
+  border-radius: 10px;
+}
+.submit-btn > span {
+  display: block;
+  transform: skewX(30deg);
+}

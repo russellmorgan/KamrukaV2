@@ -1,0 +1,208 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KAMRUKA™ + TULVEGIO™ | Now Approved</title>
+    <link rel="icon" href="/export/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="flex min-h-screen flex-col font-sans text-ink antialiased">
+    <!-- ============ HEADER ============ -->
+    <header class="bg-white" x-data="{ mobileOpen: false, piOpen: false }">
+      <div class="mx-auto flex max-w-[1920px] items-center justify-between px-5 py-4 md:px-8 lg:px-16 lg:py-7">
+        <!-- Logo lockup -->
+        <a href="/" class="shrink-0">
+          <img
+            src="/export/top_header.png"
+            alt="KAMRUKA (camrelizumab-cmrz) For intravenous infusion 190 mg per vial + TULVEGIO (rivoceranib) 250 mg tablets"
+            class="h-11 w-auto md:h-12 lg:h-[73px]"
+          />
+        </a>
+
+        <!-- Desktop / tablet nav -->
+        <div class="hidden items-center gap-6 md:flex lg:gap-14">
+          <!-- Questions? + phone -->
+          <div class="text-center md:max-lg:max-w-40">
+            <p class="mx-auto w-fit border-b border-gray-300 px-3 pb-1 text-sm font-bold tracking-wide text-navy">QUESTIONS?</p>
+            <a href="tel:18664358327" class="mt-1.5 flex items-center justify-center gap-2 text-sm font-semibold text-ink">
+              <img src="/export/phone_icon_18x18.svg" alt="" class="h-4 w-4" />
+              <span class="lg:whitespace-nowrap"
+                ><span class="whitespace-nowrap">1-866-4ELEVAR</span> <span class="whitespace-nowrap">(1-866-435-3827)</span></span
+              >
+            </a>
+          </div>
+
+          <!-- Prescribing Information dropdown -->
+          <div class="relative" @click.outside="piOpen = false">
+            <button
+              type="button"
+              class="flex items-center gap-2 text-sm font-semibold text-ink lg:text-base"
+              @click="piOpen = !piOpen"
+            >
+              <span class="md:max-lg:max-w-28 md:max-lg:text-left">Prescribing Information</span>
+              <img
+                src="/export/tray_up_down_chevron_20x10.svg"
+                alt=""
+                class="h-2.5 w-5 transition-transform"
+                :class="piOpen ? '' : 'rotate-180'"
+              />
+            </button>
+            <div
+              x-show="piOpen"
+              x-cloak
+              class="absolute right-0 top-full z-20 mt-3 w-64 bg-white p-4 shadow-lg ring-1 ring-gray-200"
+            >
+              <a href="#" class="block text-sm font-semibold text-navy hover:underline">Full Prescribing Information</a>
+            </div>
+          </div>
+
+          <!-- Press Release -->
+          <a href="#" class="text-sm font-semibold text-ink lg:text-base md:max-lg:max-w-16">Press Release</a>
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button type="button" class="md:hidden" @click="mobileOpen = !mobileOpen" aria-label="Menu">
+          <img x-show="!mobileOpen" src="/export/hamburger_41x25.svg" alt="" class="h-6 w-10" />
+          <img x-show="mobileOpen" x-cloak src="/export/hamburger_x_28x28.svg" alt="" class="h-7 w-7" />
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <nav x-show="mobileOpen" x-cloak class="border-t border-gray-200 bg-white px-5 py-4 md:hidden">
+        <a href="#" class="block py-3 font-semibold text-ink">Prescribing Information</a>
+        <a href="#" class="block py-3 font-semibold text-ink">Press Release</a>
+        <div class="py-3">
+          <p class="text-sm font-bold text-navy">QUESTIONS?</p>
+          <a href="tel:18664358327" class="mt-1 flex items-center gap-2 text-sm font-semibold text-ink">
+            <img src="/export/phone_icon_18x18.svg" alt="" class="h-4 w-4" />
+            1-866-4ELEVAR (1-866-435-3827)
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero — Phase 2 (GSAP) -->
+    <section id="hero">
+      <img src="/reference/tmp_hero.png" alt="NOW APPROVED — Available soon! KAMRUKA (camrelizumab-cmrz) + TULVEGIO (rivoceranib)" class="w-full" />
+    </section>
+
+    <!-- ============ STAY UP TO DATE ============ -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-[#ebecec] to-white">
+      <img
+        src="/export/background_triangles_red_1920x665.png"
+        alt=""
+        class="pointer-events-none absolute right-0 top-1/2 h-[400px] w-auto max-w-none -translate-y-1/2 lg:h-[665px]"
+      />
+      <div class="relative mx-auto grid max-w-[1440px] grid-cols-1 gap-x-12 px-5 pb-20 md:grid-cols-[280px_1fr] md:px-10 lg:grid-cols-[390px_1fr] lg:gap-x-24 lg:px-16">
+        <!-- Orange ribbon -->
+        <div class="mx-auto w-[330px] max-w-full md:mx-0 md:w-full">
+          <div class="ribbon-body bg-gradient-to-b from-ribbon-from to-ribbon-to px-6 pb-48 pt-14 text-center md:pt-20 lg:px-10 lg:pb-56 lg:pt-28">
+            <h2 class="text-[26px] font-bold leading-tight text-headline lg:text-[42px] lg:leading-[1.15]">
+              STAY UP&#8288;-&#8288;TO&#8288;-&#8288;DATE
+            </h2>
+            <p class="mt-5 text-base font-bold leading-relaxed text-headline lg:mt-7 lg:text-lg">
+              Sign up to be the first to know about the latest updates from KAMRUKA&nbsp;+&nbsp;TULVEGIO.
+            </p>
+          </div>
+          <div class="ribbon-tail bg-gradient-to-b from-ribbon-to to-ribbon-to"></div>
+        </div>
+
+        <!-- Form (non-functional — HubSpot wiring later) -->
+        <form class="mt-14 md:mt-16 lg:mt-24" onsubmit="return false">
+          <div class="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2 lg:gap-y-14">
+            <input
+              type="text"
+              placeholder="First Name*"
+              class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
+            />
+            <input
+              type="text"
+              placeholder="Last Name*"
+              class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
+            />
+            <input
+              type="email"
+              placeholder="Email*"
+              class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
+            />
+            <div class="relative">
+              <select
+                class="w-full appearance-none border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink focus:border-navy focus:outline-none"
+              >
+                <option value="" selected>Profession*</option>
+                <option>Physician</option>
+                <option>Nurse Practitioner</option>
+                <option>Physician Assistant</option>
+                <option>Pharmacist</option>
+                <option>Other Healthcare Professional</option>
+                <option>Patient / Caregiver</option>
+              </select>
+              <!-- ponytail: chevron pinned next to the word at this type size; re-eyeball if font size changes -->
+              <svg class="pointer-events-none absolute left-[8.25rem] top-[1.1rem] h-3 w-4 text-ink" viewBox="0 0 16 10" fill="none">
+                <path d="M1 1l7 7 7-7" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+
+          <p class="mt-8 text-sm text-ink">*Required field</p>
+
+          <label class="mt-8 flex items-start gap-4">
+            <input
+              type="checkbox"
+              class="consent-check size-12 shrink-0 appearance-none self-center rounded-sm border-2 border-gray-500 bg-white"
+            />
+            <span class="text-[15px] leading-relaxed text-ink">
+              By subscribing, you agree to our
+              <a href="#" class="font-bold text-navy underline">Terms and Conditions</a> and
+              <a href="#" class="font-bold text-navy underline">Privacy Policy</a>
+              and understand that you are electing to receive email communications from Elevar Therapeutics.*
+            </span>
+          </label>
+
+          <button
+            type="submit"
+            class="submit-btn mx-6 mt-12 w-[calc(100%-3rem)] bg-navy py-4 text-center text-2xl font-bold tracking-wider text-white"
+          >
+            <span>SUBMIT</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="mt-auto">
+      <div class="mx-auto flex max-w-[1440px] flex-col items-center gap-10 px-5 pb-12 pt-6 text-center text-sm text-ink md:flex-row md:items-end md:justify-between md:px-10 md:text-left lg:px-16">
+        <div class="space-y-1.5">
+          <p>Fort Lee, NJ&nbsp; | &nbsp;Seoul, South Korea</p>
+          <p>
+            <a href="#" class="hover:underline">Privacy Policy</a>&nbsp; | &nbsp;<a href="#" class="hover:underline">European Privacy Policy</a>&nbsp; |
+            &nbsp;<a href="#" class="hover:underline">Cookie Policy</a>&nbsp; | &nbsp;<a href="#" class="hover:underline">Terms Of Use</a>
+          </p>
+          <p>KAMRUKA™ and TULVEGIO™ and the related logos are trademarks of Elevar Therapeutics.</p>
+          <p>©2026 Elevar Therapeutics. All rights reserved. US-KATU-26-0001 07/2026</p>
+        </div>
+        <img src="/export/elevar_main_logo_188x95.png" alt="Elevar Therapeutics" class="h-[95px] w-auto" />
+      </div>
+
+      <!-- Navy bar — social icons on tablet/mobile only -->
+      <div class="flex h-20 items-center justify-center gap-8 bg-navy lg:h-24">
+        <a href="#" class="lg:hidden" aria-label="LinkedIn">
+          <img src="/export/icon_linkedin_40x40.svg" alt="" class="h-9 w-9" />
+        </a>
+        <a href="#" class="lg:hidden" aria-label="X">
+          <img src="/export/icon_x_40x36.svg" alt="" class="h-8 w-9" />
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      // GSAP animations — Phase 2
+    </script>  </body>
+</html>
