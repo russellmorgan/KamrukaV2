@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KAMRUKA™ + TULVEGIO™ | Now Approved</title>
-    <link rel="icon" href="/export/favicon.ico" />
+    <link rel="icon" href="./export/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +20,7 @@
         <!-- Logo lockup -->
         <a href="/" class="shrink-0">
           <img
-            src="/export/top_header.png"
+            src="./export/top_header.png"
             alt="KAMRUKA (camrelizumab-cmrz) For intravenous infusion 190 mg per vial + TULVEGIO (rivoceranib) 250 mg tablets"
             class="h-11 w-auto md:h-12 lg:h-[73px]"
           />
@@ -32,7 +32,7 @@
           <div class="text-center md:max-lg:max-w-40">
             <p class="mx-auto w-fit border-b border-gray-300 px-3 pb-1 text-sm font-bold tracking-wide text-navy">QUESTIONS?</p>
             <a href="tel:18664358327" class="mt-1.5 flex items-center justify-center gap-2 text-sm font-semibold text-ink">
-              <img src="/export/phone_icon_18x18.svg" alt="" class="h-4 w-4" />
+              <img src="./export/phone_icon_18x18.svg" alt="" class="h-4 w-4" />
               <span class="lg:whitespace-nowrap"
                 ><span class="whitespace-nowrap">1-866-4ELEVAR</span> <span class="whitespace-nowrap">(1-866-435-3827)</span></span
               >
@@ -48,7 +48,7 @@
             >
               <span class="md:max-lg:max-w-28 md:max-lg:text-left">Prescribing Information</span>
               <img
-                src="/export/tray_up_down_chevron_20x10.svg"
+                src="./export/tray_up_down_chevron_20x10.svg"
                 alt=""
                 class="h-2.5 w-5 transition-transform"
                 :class="piOpen ? '' : 'rotate-180'"
@@ -69,8 +69,8 @@
 
         <!-- Hamburger (mobile) -->
         <button type="button" class="md:hidden" @click="mobileOpen = !mobileOpen" aria-label="Menu">
-          <img x-show="!mobileOpen" src="/export/hamburger_41x25.svg" alt="" class="h-6 w-10" />
-          <img x-show="mobileOpen" x-cloak src="/export/hamburger_x_28x28.svg" alt="" class="h-7 w-7" />
+          <img x-show="!mobileOpen" src="./export/hamburger_41x25.svg" alt="" class="h-6 w-10" />
+          <img x-show="mobileOpen" x-cloak src="./export/hamburger_x_28x28.svg" alt="" class="h-7 w-7" />
         </button>
       </div>
 
@@ -81,7 +81,7 @@
         <div class="py-3">
           <p class="text-sm font-bold text-navy">QUESTIONS?</p>
           <a href="tel:18664358327" class="mt-1 flex items-center gap-2 text-sm font-semibold text-ink">
-            <img src="/export/phone_icon_18x18.svg" alt="" class="h-4 w-4" />
+            <img src="./export/phone_icon_18x18.svg" alt="" class="h-4 w-4" />
             1-866-4ELEVAR (1-866-435-3827)
           </a>
         </div>
@@ -92,23 +92,23 @@
     <section id="hero">
       <!-- Animated canvas, tablet/desktop. Layers positioned in % of a 1920x621 design canvas -->
       <div id="hero-canvas" class="relative hidden aspect-[1920/621] w-full overflow-hidden bg-[#fcfcfc] md:block">
-        <img id="hero-gradbar" src="/export/grad_colorbar_1920x30_1.svg" alt="" class="absolute left-0 top-0 z-[7] w-full" />
+        <img id="hero-gradbar" src="./export/grad_colorbar_1920x30_1.svg" alt="" class="absolute left-0 top-0 z-[7] w-full" />
         <img
           id="hero-gif"
-          src="/export/logo-animated.gif"
+          src="./export/logo-animated.gif"
           alt="KAMRUKA (camrelizumab-cmrz) + TULVEGIO (rivoceranib)"
           class="absolute left-[20.96%] top-[26.73%] z-[6] w-[58.07%]"
         />
-        <img id="hero-tri" src="/export/outer_green_triangle.svg" alt="" class="absolute left-0 top-[10.6%] z-[12] w-[13.33%]" />
-        <img id="hero-diamond" src="/export/green_ribbon_diamond_95x268_1.png" alt="" class="absolute left-0 top-[31.9%] z-[12] w-[4.95%]" />
-        <img id="hero-slope" src="/export/grey_slope_background_1090x621_1.svg" alt="" class="absolute left-0 top-0 z-[10] h-full w-[56.77%]" />
+        <img id="hero-tri" src="./export/outer_green_triangle.svg" alt="" class="absolute left-0 top-[10.6%] z-[12] w-[13.33%]" />
+        <img id="hero-diamond" src="./export/green_ribbon_diamond_95x268_1.png" alt="" class="absolute left-0 top-[31.9%] z-[12] w-[4.95%]" />
+        <img id="hero-slope" src="./export/grey_slope_background_1090x621_1.svg" alt="" class="absolute left-0 top-0 z-[10] h-full w-[56.77%]" />
         <h1
           id="hero-title"
           class="absolute left-[10.42%] top-[33.5%] z-[15] w-[26%] text-[4.7vw] font-bold leading-none tracking-[-0.16vw] text-navy"
         >
           NOW APPROVED
         </h1>
-        <img id="hero-btn" src="/export/button_style1_266x42_1.svg" alt="" class="absolute bottom-[27.7%] left-[10.42%] z-[13] w-[13.85%]" />
+        <img id="hero-btn" src="./export/button_style1_266x42_1.svg" alt="" class="absolute bottom-[27.7%] left-[10.42%] z-[13] w-[13.85%]" />
         <p
           id="hero-avail"
           class="absolute bottom-[27.7%] left-[10.42%] z-[14] flex h-[6.76%] w-[13.85%] items-center px-[0.7%] text-[1.3vw] font-bold uppercase leading-none tracking-tight text-white"
@@ -119,16 +119,16 @@
 
       <!-- Static hero, mobile -->
       <div class="md:hidden">
-        <img src="/export/rainbow_grad_bar_540x30.png" alt="" class="w-full" />
+        <img src="./export/rainbow_grad_bar_540x30.png" alt="" class="w-full" />
         <div class="relative overflow-hidden py-10">
-          <img src="/export/grey_slope_background_mobile_306x187.svg" alt="" class="absolute left-0 top-0 h-full w-auto max-w-none" />
+          <img src="./export/grey_slope_background_mobile_306x187.svg" alt="" class="absolute left-0 top-0 h-full w-auto max-w-none" />
           <div class="relative text-center">
             <h1 class="text-4xl font-bold leading-tight text-navy">NOW APPROVED</h1>
             <p class="relative mx-auto mt-3 w-56 bg-navy py-2 text-sm font-bold uppercase text-white [clip-path:polygon(0_0,100%_0,88%_100%,0_100%)]">
               Available soon!
             </p>
             <img
-              src="/export/top_header.png"
+              src="./export/top_header.png"
               alt="KAMRUKA (camrelizumab-cmrz) + TULVEGIO (rivoceranib) 250 mg tablets"
               class="mx-auto mt-8 w-4/5"
             />
@@ -140,7 +140,7 @@
     <!-- ============ STAY UP TO DATE ============ -->
     <section class="relative overflow-hidden bg-gradient-to-b from-[#ebecec] to-white">
       <img
-        src="/export/background_triangles_red_1920x665.png"
+        src="./export/background_triangles_red_1920x665.png"
         alt=""
         class="pointer-events-none absolute right-0 top-1/2 h-[400px] w-auto max-w-none -translate-y-1/2 lg:h-[665px]"
       />
@@ -232,16 +232,16 @@
           <p>KAMRUKA™ and TULVEGIO™ and the related logos are trademarks of Elevar Therapeutics.</p>
           <p>©2026 Elevar Therapeutics. All rights reserved. US-KATU-26-0001 07/2026</p>
         </div>
-        <img src="/export/elevar_main_logo_188x95.png" alt="Elevar Therapeutics" class="h-[95px] w-auto" />
+        <img src="./export/elevar_main_logo_188x95.png" alt="Elevar Therapeutics" class="h-[95px] w-auto" />
       </div>
 
       <!-- Navy bar — social icons on tablet/mobile only -->
       <div class="flex h-20 items-center justify-center gap-8 bg-navy lg:h-24">
         <a href="#" class="lg:hidden" aria-label="LinkedIn">
-          <img src="/export/icon_linkedin_40x40.svg" alt="" class="h-9 w-9" />
+          <img src="./export/icon_linkedin_40x40.svg" alt="" class="h-9 w-9" />
         </a>
         <a href="#" class="lg:hidden" aria-label="X">
-          <img src="/export/icon_x_40x36.svg" alt="" class="h-8 w-9" />
+          <img src="./export/icon_x_40x36.svg" alt="" class="h-8 w-9" />
         </a>
       </div>
     </footer>
