@@ -4,7 +4,8 @@
       "PowerShell(npm install alpinejs)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git commit -m 'Fix GitHub Actions permissions for gh-pages deployment *)"
     ]
   }
 }
