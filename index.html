@@ -93,12 +93,16 @@
       <!-- Animated canvas, tablet/desktop. Layers positioned in % of a 1920x621 design canvas -->
       <div id="hero-canvas" class="relative hidden aspect-[1920/621] w-full overflow-hidden bg-[#fcfcfc] md:block">
         <img id="hero-gradbar" src="./export/grad_colorbar_1920x30_1.svg" alt="" class="absolute left-0 top-0 z-[7] w-full" />
-        <img
-          id="hero-gif"
-          src="./export/logo-animated.gif"
-          alt="KAMRUKA (camrelizumab-cmrz) + TULVEGIO (rivoceranib)"
+        <video
+          id="hero-logo"
+          src="./video/logo-anim.mp4"
+          autoplay
+          muted
+          playsinline
+          preload="auto"
+          aria-label="KAMRUKA (camrelizumab-cmrz) + TULVEGIO (rivoceranib)"
           class="absolute left-[20.96%] top-[26.73%] z-[6] w-[58.07%]"
-        />
+        ></video>
         <img id="hero-tri" src="./export/outer_green_triangle.svg" alt="" class="absolute left-0 top-[10.6%] z-[12] w-[13.33%]" />
         <img id="hero-diamond" src="./export/green_ribbon_diamond_95x268_1.png" alt="" class="absolute left-0 top-[31.9%] z-[12] w-[4.95%]" />
         <img id="hero-slope" src="./export/grey_slope_background_1090x621_1.svg" alt="" class="absolute left-0 top-0 z-[10] h-full w-[56.77%]" />
