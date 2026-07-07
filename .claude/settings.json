@@ -6,7 +6,8 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(git commit -m 'Fix GitHub Actions permissions for gh-pages deployment *)",
-      "Bash(git commit -m 'Use official GitHub Pages deployment action *)"
+      "Bash(git commit -m 'Use official GitHub Pages deployment action *)",
+      "Bash(git commit -m 'Fix image paths for GitHub Pages subdirectory deployment *)"
     ]
   }
 }
