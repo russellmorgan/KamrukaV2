@@ -14,7 +14,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   video.removeAttribute('autoplay')
   video.addEventListener('loadedmetadata', () => (video.currentTime = video.duration), { once: true })
 } else if (window.matchMedia('(min-width: 768px)').matches) {
-  const tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } })
+  const tl = gsap.timeline({ paused: true, defaults: { ease: 'power4.out' } })
   tl.from('#hero-logo', { autoAlpha: 0, duration: 0.5 }, 0) // video plays its ~4s logo build
     .to('#hero-logo', { ...logoFinal, duration: 1.5 }, 4)
     .from('#hero-slope', { xPercent: -105, duration: 2 }, 4)

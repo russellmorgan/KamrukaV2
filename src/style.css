@@ -55,6 +55,11 @@
 .submit-btn {
   transform: skewX(-30deg);
   border-radius: 10px;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background-color: color-mix(in srgb, var(--color-navy) 100%, white 30%);
 }
 .submit-btn > span {
   display: block;

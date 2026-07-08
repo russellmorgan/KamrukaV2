@@ -30,7 +30,7 @@
         <div class="hidden items-center gap-6 md:flex lg:gap-14">
           <!-- Questions? + phone -->
           <div class="text-center md:max-lg:max-w-40">
-            <p class="mx-auto w-fit border-b border-gray-300 px-3 pb-1 text-sm font-bold tracking-wide text-navy">QUESTIONS?</p>
+            <p class="mx-auto w-fit border-b border-gray-300 px-3 pb-1 text-sm font-semibold tracking-wide text-navy">QUESTIONS?</p>
             <a href="tel:18664358327" class="mt-1.5 flex items-center justify-center gap-2 text-sm font-semibold text-ink">
               <img src="./export/phone_icon_18x18.svg" alt="" class="h-4 w-4" />
               <span class="lg:whitespace-nowrap"
@@ -43,7 +43,7 @@
           <div class="relative" @click.outside="piOpen = false">
             <button
               type="button"
-              class="flex items-center gap-2 text-sm font-semibold text-ink lg:text-base"
+              class="flex items-center gap-2 text-sm font-semibold text-ink"
               @click="piOpen = !piOpen"
             >
               <span class="md:max-lg:max-w-28 md:max-lg:text-left">Prescribing Information</span>
@@ -64,7 +64,7 @@
           </div>
 
           <!-- Press Release -->
-          <a href="#" class="text-sm font-semibold text-ink lg:text-base md:max-lg:max-w-16">Press Release</a>
+          <a href="#" class="text-sm font-semibold text-ink md:max-lg:max-w-16">Press Release</a>
         </div>
 
         <!-- Hamburger (mobile) -->
@@ -79,7 +79,7 @@
         <a href="#" class="block py-3 font-semibold text-ink">Prescribing Information</a>
         <a href="#" class="block py-3 font-semibold text-ink">Press Release</a>
         <div class="py-3">
-          <p class="text-sm font-bold text-navy">QUESTIONS?</p>
+          <p class="text-sm font-semibold text-navy">QUESTIONS?</p>
           <a href="tel:18664358327" class="mt-1 flex items-center gap-2 text-sm font-semibold text-ink">
             <img src="./export/phone_icon_18x18.svg" alt="" class="h-4 w-4" />
             1-866-4ELEVAR (1-866-435-3827)
@@ -152,10 +152,10 @@
         <!-- Orange ribbon -->
         <div class="mx-auto w-[330px] max-w-full md:mx-0 md:w-full">
           <div class="ribbon-body bg-gradient-to-b from-ribbon-from to-ribbon-to px-6 pb-48 pt-14 text-center md:pt-20 lg:px-10 lg:pb-56 lg:pt-28">
-            <h2 class="text-[26px] font-bold leading-tight text-headline lg:text-[42px] lg:leading-[1.15]">
+            <h2 class="text-[26px] font-semibold leading-tight text-headline lg:text-[42px] lg:leading-[1.15]">
               STAY UP&#8288;-&#8288;TO&#8288;-&#8288;DATE
             </h2>
-            <p class="mt-5 text-base font-bold leading-relaxed text-headline lg:mt-7 lg:text-lg">
+            <p class="mt-5 text-base font-semibold leading-relaxed text-headline lg:mt-7 lg:text-lg">
               Sign up to be the first to know about the latest updates from KAMRUKA&nbsp;+&nbsp;TULVEGIO.
             </p>
           </div>
@@ -168,20 +168,24 @@
             <input
               type="text"
               placeholder="First Name*"
+              aria-label="First Name (required)"
               class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
             />
             <input
               type="text"
               placeholder="Last Name*"
+              aria-label="Last Name (required)"
               class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
             />
             <input
               type="email"
               placeholder="Email*"
+              aria-label="Email (required)"
               class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
             />
             <div class="relative">
               <select
+                aria-label="Profession (required)"
                 class="w-full appearance-none border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink focus:border-navy focus:outline-none"
               >
                 <option value="" selected>Profession*</option>
@@ -206,7 +210,7 @@
               type="checkbox"
               class="consent-check size-12 shrink-0 appearance-none self-center rounded-sm border-2 border-gray-500 bg-white"
             />
-            <span class="text-[15px] leading-relaxed text-ink">
+            <span class="text-base leading-relaxed text-ink">
               By subscribing, you agree to our
               <a href="#" class="font-bold text-navy underline">Terms and Conditions</a> and
               <a href="#" class="font-bold text-navy underline">Privacy Policy</a>
