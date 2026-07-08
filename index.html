@@ -162,30 +162,47 @@
           <div class="ribbon-tail bg-gradient-to-b from-ribbon-to to-ribbon-to"></div>
         </div>
 
-        <!-- Form (non-functional — HubSpot wiring later) -->
-        <form class="mt-14 md:mt-16 lg:mt-24" onsubmit="return false">
+        <!-- Success message (shown after submit; form re-appears on reload) -->
+        <div x-data="{ submitted: false, error: false }">
+          <div x-show="submitted" x-cloak x-transition.opacity.duration.400ms class="mt-14 flex flex-col items-center justify-center bg-white px-6 py-16 text-center md:mt-16 lg:mt-24">
+            <p class="text-3xl font-semibold leading-tight text-navy">Success!</p>
+            <p class="mt-0.5 text-[22px] font-normal leading-tight text-ink">You are now subscribed.</p>
+          </div>
+
+          <!-- Form (non-functional — HubSpot wiring later) -->
+          <form
+            x-show="!submitted"
+            x-transition.opacity.duration.400ms
+            novalidate
+            class="mt-14 md:mt-16 lg:mt-24"
+            @submit.prevent="if ($el.checkValidity()) { error = false; submitted = true } else { error = true; $el.reportValidity() }"
+          >
           <div class="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2 lg:gap-y-14">
             <input
               type="text"
               placeholder="First Name*"
               aria-label="First Name (required)"
+              required
               class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
             />
             <input
               type="text"
               placeholder="Last Name*"
               aria-label="Last Name (required)"
+              required
               class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
             />
             <input
               type="email"
               placeholder="Email*"
               aria-label="Email (required)"
+              required
               class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
             />
             <div class="relative">
               <select
                 aria-label="Profession (required)"
+                required
                 class="w-full appearance-none border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink focus:border-navy focus:outline-none"
               >
                 <option value="" selected>Profession*</option>
@@ -208,6 +225,7 @@
           <label class="mt-8 flex items-start gap-4">
             <input
               type="checkbox"
+              required
               class="consent-check size-12 shrink-0 appearance-none self-center rounded-sm border-2 border-gray-500 bg-white"
             />
             <span class="text-base leading-relaxed text-ink">
@@ -218,13 +236,18 @@
             </span>
           </label>
 
+          <p x-show="error" x-cloak class="mt-4 text-lg font-bold text-[#CD4537]">
+            Please complete all required fields with a valid email address.
+          </p>
+
           <button
             type="submit"
             class="submit-btn mx-6 mt-12 w-[calc(100%-3rem)] bg-navy py-4 text-center text-2xl font-bold tracking-wider text-white"
           >
             <span>SUBMIT</span>
           </button>
-        </form>
+          </form>
+        </div>
       </div>
     </section>
 
