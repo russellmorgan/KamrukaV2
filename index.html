@@ -258,7 +258,7 @@
           <p>Fort Lee, NJ&nbsp; | &nbsp;Seoul, South Korea</p>
           <p>
             <a href="#" class="hover:underline">Privacy Policy</a>&nbsp; | &nbsp;<a href="#" class="hover:underline">European Privacy Policy</a>&nbsp; |
-            &nbsp;<a href="#" class="hover:underline">Cookie Policy</a>&nbsp; | &nbsp;<a href="#" class="hover:underline">Terms Of Use</a>
+            &nbsp;<a href="#" class="hover:underline" @click.prevent="document.getElementById('cookie-consent').__x.$data.open = true">Cookie Policy</a>&nbsp; | &nbsp;<a href="#" class="hover:underline">Terms Of Use</a>
           </p>
           <p>KAMRUKA™ and TULVEGIO™ and the related logos are trademarks of Elevar Therapeutics.</p>
           <p>©2026 Elevar Therapeutics. All rights reserved. US-KATU-26-0001 07/2026</p>
@@ -277,5 +277,43 @@
       </div>
     </footer>
 
+    <!-- ============ COOKIE CONSENT MODAL ============ -->
+    <div
+      id="cookie-consent"
+      x-data="{ open: false }"
+      x-init="open = !localStorage.getItem('cookieConsent')"
+      x-show="open"
+      x-cloak
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-5"
+    >
+      <div class="relative w-full max-w-xl overflow-hidden rounded-lg border-2 border-navy bg-white p-8 text-center shadow-xl sm:p-10">
+        <div
+          class="pointer-events-none absolute left-0 top-0 h-40 w-40 bg-gradient-to-br from-gray-200 to-transparent"
+          style="clip-path: polygon(0 0, 100% 0, 0 100%)"
+        ></div>
+        <p class="relative text-2xl font-bold text-navy">Cookie Policy</p>
+        <p class="relative mt-4 text-ink">
+          We use cookies on our website to give you the most relevant experience by remembering your preferences and
+          repeat visits. By clicking &ldquo;Accept&rdquo;, you consent to the use of ALL the cookies. However you may
+          visit Cookie Settings to provide a controlled consent.
+        </p>
+        <div class="relative mt-8 flex flex-wrap items-center justify-center gap-4">
+          <button
+            type="button"
+            class="rounded-full bg-navy px-8 py-3 font-semibold text-white"
+            @click="localStorage.setItem('cookieConsent', 'all'); open = false"
+          >
+            Accept
+          </button>
+          <button
+            type="button"
+            class="rounded-full border-2 border-navy px-8 py-3 font-semibold text-navy"
+            @click="localStorage.setItem('cookieConsent', 'essential'); open = false"
+          >
+            Cookie Settings
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
