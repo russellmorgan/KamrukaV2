@@ -29,9 +29,7 @@
 }
 
 /* Ribbon shape now comes from export/bg_yellow_arrow.svg (see .ribbon-shape) */
-.ribbon-tail {
-  height: 32px;
-}
+
 .submit-btn {
   transform: skewX(-30deg);
   border-radius: 10px;
@@ -45,3 +43,190 @@
   display: block;
   transform: skewX(30deg);
 }
+
+/* ===== HubSpot embed: match the old hand-built form ===== */
+.hs-form-embed {
+  /* all:revert-layer above also reverts the md:flex-1 utility on this element; restore it */
+  flex: 1 1 0% !important;
+  min-width: 0;
+  width: 100%;
+}
+.hs-form-embed form.hs-form {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: 3.5rem;
+  font-family: var(--font-sans);
+}
+@media (min-width: 768px) {
+  .hs-form-embed form.hs-form { margin-top: 4rem; }
+}
+@media (min-width: 1024px) {
+  .hs-form-embed form.hs-form { margin-top: 6rem; }
+}
+
+.hs-form-embed fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  max-width: none !important;
+}
+/* two-up rows: old grid had gap-x-16 (4rem), gap-y-10 / lg:gap-y-14 */
+.hs-form-embed fieldset.form-columns-2 {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 2.5rem 4rem;
+  margin: 0 !important;
+  width:100% !important;
+}
+.hs-form-embed fieldset.form-columns-2:first-of-type {
+  margin-bottom: 2.5rem !important;
+}
+@media (min-width: 1024px) {
+  .hs-form-embed fieldset.form-columns-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem 4rem;
+  }
+  .hs-form-embed fieldset.form-columns-2:first-of-type {
+    margin-bottom: 3.5rem !important;
+  }
+}
+.hs-form-embed .hs-form-field {
+  float: none !important;
+  width: 100% !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.hs-form-embed .hs-form-field > label { display: none; }
+.hs-form-embed .hs-form-field .input { margin: 0; }
+
+.hs-form-embed .hs-input:not([type='checkbox']) {
+  box-sizing: border-box;
+  width: 100% !important;
+  border: 0;
+  border-bottom: 1px solid #99a1af; /* gray-400 */
+  border-radius: 0;
+  background-color: #fff;
+  padding: 0.625rem 0.75rem;
+  font-family: inherit;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: var(--color-ink);
+}
+.hs-form-embed .hs-input::placeholder,
+.hs-form-embed select.hs-input.is-placeholder {
+  color: var(--color-ink);
+  opacity: 1;
+}
+.hs-form-embed .hs-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-navy);
+}
+
+/* select: chevron pinned next to "Profession*" like the old form */
+.hs-form-embed select.hs-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3Cpath d='M1 1l7 7 7-7' stroke='%23313133' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 8.25rem center; /* ponytail: eyeballed to sit beside the word; re-check if font size changes */
+  background-size: 1rem 0.625rem;
+}
+
+/* "*Required field" */
+.hs-form-embed .hs-richtext p {
+  margin: 2rem 0 0;
+  font-size: 0.875rem;
+  color: var(--color-ink);
+}
+
+/* consent checkbox row */
+.hs-form-embed .legal-consent-container { margin-top: 2rem; }
+.hs-form-embed .inputs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.hs-form-embed .hs-form-booleancheckbox-display {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.hs-form-embed .hs-input[type='checkbox'] {
+  appearance: none;
+  flex-shrink: 0;
+  align-self: center;
+  width: 3rem !important;
+  min-width: 3rem;
+  height: 3rem !important;
+  min-height: 3rem;
+  margin: 0;
+  border: 2px solid #6a7282; /* gray-500 */
+  border-radius: 0.125rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+.hs-form-embed .hs-input[type='checkbox']:checked {
+  border-color: #2265e4;
+  background: #2265e4
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1.5' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / 70% no-repeat;
+}
+.hs-form-embed .hs-form-booleancheckbox-display > span {
+  font-size: 1rem;
+  line-height: 1.625;
+  color: var(--color-ink);
+}
+.hs-form-embed .hs-form-booleancheckbox-display p { margin: 0; }
+.hs-form-embed .hs-form-booleancheckbox-display a {
+  font-weight: 700;
+  color: var(--color-navy);
+  text-decoration: underline;
+}
+/* text already ends with "*", hide HubSpot's extra asterisk */
+.hs-form-embed .hs-form-required { display: none; }
+
+/* validation errors */
+.hs-form-embed .hs-error-msgs {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #cd4537;
+}
+
+/* submit: skewed navy bar with upright text (skew the wrapper, not the input) */
+.hs-form-embed .hs-submit .actions {
+  position: relative;
+  margin: 3rem 1.5rem 0;
+  padding: 0;
+}
+.hs-form-embed .hs-submit .actions::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-navy);
+  border-radius: 10px;
+  transform: skewX(-30deg);
+  transition: background-color 0.15s ease;
+}
+.hs-form-embed .hs-submit .actions:hover::before {
+  background-color: color-mix(in srgb, var(--color-navy) 100%, white 30%);
+}
+.hs-form-embed .hs-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 1rem 0;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
+.hs-form-embed .hs-button:disabled { opacity: 0.6; }
