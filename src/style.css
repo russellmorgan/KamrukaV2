@@ -13,6 +13,14 @@
   display: none !important;
 }
 
+/* Opt the HubSpot embed out of Tailwind's preflight/utility resets */
+.hs-form-embed,
+.hs-form-embed *,
+.hs-form-embed *::before,
+.hs-form-embed *::after {
+  all: revert-layer;
+}
+
 .consent-check:checked {
   border-color: #2265e4;
   background: #2265e4

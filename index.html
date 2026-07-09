@@ -149,15 +149,11 @@
         alt=""
         class="pointer-events-none absolute right-0 top-1/2 h-[400px] w-auto max-w-none -translate-y-1/2 lg:h-[665px]"
       />
-      <div class="relative mx-auto grid max-w-[1440px] grid-cols-1 gap-x-12 px-5 pb-20 md:grid-cols-[280px_1fr] md:px-10 lg:grid-cols-[390px_1fr] lg:gap-x-24 lg:px-16">
+      <div class="relative mx-auto flex max-w-[1440px] flex-col gap-x-12 px-5 pb-20 md:flex-row md:px-10 lg:gap-x-24 lg:px-16">
         <!-- Orange ribbon -->
-        <div class="relative isolate mx-auto w-[330px] max-w-full overflow-hidden md:mx-0 md:w-full">
-          <img
-            src="./export/bg_yellow_arrow.svg"
-            alt=""
-            class="pointer-events-none absolute inset-0 -z-10 h-full w-full"
-          />
-          <div class="ribbon-body px-6 pb-48 pt-14 text-center md:pt-20 lg:px-10 lg:pb-56 lg:pt-28">
+        <div class="relative isolate mx-auto w-[330px] max-w-full shrink-0 overflow-hidden md:mx-0 md:w-[280px] lg:w-[390px]">
+          <div class="ribbon-body px-6 pb-48 pt-14 text-center md:pt-20 lg:px-10 lg:pb-56 lg:pt-28 
+          bg-[url(./export/bg_yellow_arrow.svg)] bg-cover bg-position-[center_top_-12rem] md:bg-top md:bg-contain bg-center bg-no-repeat">
             <h2 class="text-[26px] font-semibold leading-tight text-headline lg:text-[42px] lg:leading-[1.15]">
               STAY UP&#8288;-&#8288;TO&#8288;-&#8288;DATE
             </h2>
@@ -165,100 +161,18 @@
               Sign up to be the first to know about the latest updates from KAMRUKA&nbsp;+&nbsp;TULVEGIO.
             </p>
           </div>
-          <div class="ribbon-tail"></div>
         </div>
 
-        <!-- Success message (shown after submit; form re-appears on reload) -->
-        <div x-data="subscribeForm()">
-          <div x-show="submitted" x-cloak x-transition.opacity.duration.400ms class="mt-14 flex flex-col items-center justify-center bg-white px-6 py-16 text-center md:mt-16 lg:mt-24">
-            <p class="text-3xl font-semibold leading-tight text-navy">Success!</p>
-            <p class="mt-0.5 text-[22px] font-normal leading-tight text-ink">You are now subscribed.</p>
-          </div>
-
-          <form
-            x-show="!submitted"
-            x-transition.opacity.duration.400ms
-            novalidate
-            class="mt-14 md:mt-16 lg:mt-24"
-            @submit.prevent="onSubmit($el)"
-          >
-          <div class="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2 lg:gap-y-14">
-            <input
-              x-ref="firstName"
-              type="text"
-              placeholder="First Name*"
-              aria-label="First Name (required)"
-              required
-              class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
-            />
-            <input
-              x-ref="lastName"
-              type="text"
-              placeholder="Last Name*"
-              aria-label="Last Name (required)"
-              required
-              class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
-            />
-            <input
-              x-ref="email"
-              type="email"
-              placeholder="Email*"
-              aria-label="Email (required)"
-              required
-              class="w-full border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink placeholder:text-ink focus:border-navy focus:outline-none"
-            />
-            <div class="relative">
-              <select
-                x-ref="profession"
-                aria-label="Profession (required)"
-                required
-                class="w-full appearance-none border-b border-gray-400 bg-white px-3 pb-2.5 pt-2.5 text-lg text-ink focus:border-navy focus:outline-none"
-              >
-                <option value="" selected>Profession*</option>
-                <option>Physician</option>
-                <option>Nurse Practitioner</option>
-                <option>Physician Assistant</option>
-                <option>Pharmacist</option>
-                <option>Other Healthcare Professional</option>
-                <option>Patient / Caregiver</option>
-              </select>
-              <!-- ponytail: chevron pinned next to the word at this type size; re-eyeball if font size changes -->
-              <svg class="pointer-events-none absolute left-[8.25rem] top-[1.1rem] h-3 w-4 text-ink" viewBox="0 0 16 10" fill="none">
-                <path d="M1 1l7 7 7-7" stroke="currentColor" stroke-width="2" />
-              </svg>
-            </div>
-          </div>
-
-          <p class="mt-8 text-sm text-ink">*Required field</p>
-
-          <label class="mt-8 flex items-start gap-4">
-            <input
-              x-ref="consent"
-              type="checkbox"
-              required
-              class="consent-check size-12 shrink-0 appearance-none self-center rounded-sm border-2 border-gray-500 bg-white"
-            />
-            <span class="text-base leading-relaxed text-ink">
-              By subscribing, you agree to our
-              <a href="#" class="font-bold text-navy underline">Terms and Conditions</a> and
-              <a href="#" class="font-bold text-navy underline">Privacy Policy</a>
-              and understand that you are electing to receive email communications from Elevar Therapeutics.*
-            </span>
-          </label>
-
-          <p x-show="error" x-cloak class="mt-4 text-lg font-bold text-[#CD4537]">
-            Please complete all required fields with a valid email address.
-          </p>
-
-          <button
-            type="submit"
-            :disabled="submitting"
-            class="submit-btn mx-6 mt-12 w-[calc(100%-3rem)] bg-navy py-4 text-center text-2xl font-bold tracking-wider text-white disabled:opacity-60"
-          >
-            <span x-text="submitting ? 'SUBMITTING…' : 'SUBMIT'"></span>
-          </button>
-          </form>
-        </div>
+        <div id="hubspot-form" class="hs-form-embed md:flex-1"></div>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+            portalId: "24308407",
+            formId: "2663dd65-cb3c-49ad-9b36-464d0a5904f9",
+            region: "na1",
+            target: "#hubspot-form"
+          });
+        </script>
       </div>
     </section>
 
