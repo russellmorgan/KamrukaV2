@@ -8,7 +8,14 @@
       "Bash(git commit -m 'Fix GitHub Actions permissions for gh-pages deployment *)",
       "Bash(git commit -m 'Use official GitHub Pages deployment action *)",
       "Bash(git commit -m 'Fix image paths for GitHub Pages subdirectory deployment *)",
-      "WebFetch(domain:subtle-paletas-283a04.netlify.app)"
+      "WebFetch(domain:subtle-paletas-283a04.netlify.app)",
+      "Bash(curl -s \"https://api.hsforms.com/forms/v2/fields/24308407/6a352cac-12ce-44f7-bae4-05705097e533\")",
+      "Bash(curl -sL \"https://eh0hj.share.hsforms.com/2ajUsrBLORPe65AVwUJflMw\" -o /tmp/hsform.html)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL \"https://eh0hj.share.hsforms.com/2ajUsrBLORPe65AVwUJflMw\" -o \"C:/Users/Russell/AppData/Local/Temp/claude/c--Users-Russell-Documents-GitHub-KamrukaV2/2abddd4b-cf7a-4bbf-be2c-e147b43d5b0d/scratchpad/hsform.html\")",
+      "WebFetch(domain:developers.hubspot.com)",
+      "Bash(npx vite *)",
+      "Bash(curl -s -X POST https://api.hsforms.com/submissions/v3/integration/submit/24308407/6a352cac-12ce-44f7-bae4-05705097e533 -H 'Content-Type: application/json' -d '{ *)"
     ]
   }
 }

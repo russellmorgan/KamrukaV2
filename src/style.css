@@ -20,37 +20,9 @@
     center / 70% no-repeat;
 }
 
-/* Shapes Tailwind utilities can't express — clip-path angles */
-/* V depth: 165px total */
-.ribbon-body {
-  clip-path: shape(
-    from 0% 0%,
-    hline to 100%,
-    vline to calc(100% - 179px),
-    curve to calc(100% - 14px) calc(100% - 153px) with 100% calc(100% - 165px),
-    line to calc(50% + 14px) calc(100% - 12px),
-    curve to calc(50% - 14px) calc(100% - 12px) with 50% 100%,
-    line to 14px calc(100% - 153px),
-    curve to 0% calc(100% - 179px) with 0% calc(100% - 165px),
-    close
-  );
-}
+/* Ribbon shape now comes from export/bg_yellow_arrow.svg (see .ribbon-shape) */
 .ribbon-tail {
-  height: 183px;
-  margin-top: -151px;
-  clip-path: shape(
-    from 0% 0%,
-    line to calc(50% - 14px) 153px,
-    curve to calc(50% + 14px) 153px with 50% 165px,
-    line to 100% 0%,
-    vline to 11px,
-    curve to calc(100% - 8px) 25px with 100% 18px,
-    line to calc(50% + 14px) 171px,
-    curve to calc(50% - 14px) 171px with 50% 183px,
-    line to 8px 25px,
-    curve to 0% 11px with 0% 18px,
-    close
-  );
+  height: 32px;
 }
 .submit-btn {
   transform: skewX(-30deg);

@@ -3,6 +3,54 @@ import Alpine from 'alpinejs'
 import { gsap } from 'gsap'
 
 window.Alpine = Alpine
+
+const HUBSPOT_PORTAL_ID = '24308407'
+const HUBSPOT_FORM_GUID = '6a352cac-12ce-44f7-bae4-05705097e533'
+
+window.subscribeForm = () => ({
+  submitted: false,
+  submitting: false,
+  error: false,
+
+  async onSubmit(formEl) {
+    if (!formEl.checkValidity()) {
+      this.error = true
+      formEl.reportValidity()
+      return
+    }
+    this.error = false
+    this.submitting = true
+
+    try {
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields: [
+              { name: 'firstname', value: this.$refs.firstName.value },
+              { name: 'lastname', value: this.$refs.lastName.value },
+              { name: 'email', value: this.$refs.email.value },
+              // ponytail: confirm this matches HubSpot's actual internal property name/option values for the dropdown
+              { name: 'profession', value: this.$refs.profession.value },
+              { name: 'trial_page___agreement', value: this.$refs.consent.checked },
+            ],
+            context: { pageUri: location.href, pageName: document.title },
+          }),
+        }
+      )
+      if (!res.ok) throw new Error(`HubSpot submit failed: ${res.status}`)
+      this.submitted = true
+    } catch (e) {
+      console.error(e)
+      this.error = true
+    } finally {
+      this.submitting = false
+    }
+  },
+})
+
 Alpine.start()
 
 // Hero animation — timings ported from the Revolution Slider reference (st/sp values, ms → s)
